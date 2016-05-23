@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52B958F9-E4DB-42BE-A1E1-0756CFC39ABD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WeChat.Framework</RootNamespace>
+    <AssemblyName>WeChat.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Handler\EventHandlers\BaseEventHandler.cs" />
+    <Compile Include="Handler\EventHandlers\ClickEventHandler.cs" />
+    <Compile Include="Handler\EventHandlers\DefaultEventHandler.cs" />
+    <Compile Include="Handler\EventHandlers\IEventHandler.cs" />
+    <Compile Include="Handler\EventHandlers\SubscribeEventHandler.cs" />
+    <Compile Include="Handler\EventHandlers\UnsubscribeEventHandler.cs" />
+    <Compile Include="Handler\HttpRequestHandler.cs" />
+    <Compile Include="Handler\MessageHandlers\BaseMessageHandler.cs" />
+    <Compile Include="Handler\MessageHandlers\DefaultMessageHandler.cs" />
+    <Compile Include="Handler\MessageHandlers\ImageMessageHandler.cs" />
+    <Compile Include="Handler\MessageHandlers\IMessageHandler.cs" />
+    <Compile Include="Handler\MessageHandlers\LinkMessageHandler.cs" />
+    <Compile Include="Handler\MessageHandlers\LocationMessageHandler.cs" />
+    <Compile Include="Handler\MessageHandlers\TextMessageHandler.cs" />
+    <Compile Include="Handler\MessageHandlers\VideoMessageHandler.cs" />
+    <Compile Include="Handler\MessageHandlers\VoiceMessageHandler.cs" />
+    <Compile Include="Handler\PostHandler.cs" />
+    <Compile Include="Model\Event\EventModel.cs" />
+    <Compile Include="Model\Event\EventType.cs" />
+    <Compile Include="Model\JsonModel.cs" />
+    <Compile Include="Model\Menu\ButtonModel.cs" />
+    <Compile Include="Model\Menu\MenuModel.cs" />
+    <Compile Include="Model\Message\BaseMessage.cs" />
+    <Compile Include="Model\Message\ImageMessage.cs" />
+    <Compile Include="Model\Message\ImageResponseMessage.cs" />
+    <Compile Include="Model\Message\NewsResponseMessage.cs" />
+    <Compile Include="Model\Message\LinkMessage.cs" />
+    <Compile Include="Model\Message\LocationMessage.cs" />
+    <Compile Include="Model\Message\MsgType.cs" />
+    <Compile Include="Model\Message\MuiscResponseMessage.cs" />
+    <Compile Include="Model\Message\ShortVideoMessage.cs" />
+    <Compile Include="Model\Message\TextMessage.cs" />
+    <Compile Include="Model\Message\TextResponseMessage.cs" />
+    <Compile Include="Model\Message\VideoMessage.cs" />
+    <Compile Include="Model\Message\VideoResponseMessage.cs" />
+    <Compile Include="Model\Message\VoiceMessage.cs" />
+    <Compile Include="Model\Message\VoiceResponseMessage.cs" />
+    <Compile Include="Model\Token\TokenModel.cs" />
+    <Compile Include="Model\XmlModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Imples\MenuService.cs" />
+    <Compile Include="Services\IServices\IMenuService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
